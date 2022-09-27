@@ -6,13 +6,13 @@
 /*   By: opaunas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 10:36:01 by opaunas           #+#    #+#             */
-/*   Updated: 2022/09/19 10:38:48 by opaunas          ###   ########.fr       */
+/*   Updated: 2022/09/21 14:46:35 by opaunas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
-    int	i;
+	int	i;
 	int	j;
 
 	i = 0;
