@@ -1,47 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: opaunas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 15:01:27 by opaunas           #+#    #+#             */
-/*   Updated: 2022/09/26 19:39:15 by opaunas          ###   ########.fr       */
+/*   Created: 2022/09/28 17:51:09 by opaunas           #+#    #+#             */
+/*   Updated: 2022/09/29 09:46:55 by opaunas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char a)
+int	main(int ag, char **av)
 {
-	write(1, &a, 1);
-}
+	int	i;
+	int	j;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
+	i = 1;
+	while (i < ag)
 	{
-		ft_putchar('-');
-		ft_putchar('2');
-		nb = 147483648;
+		j = 0;
+		while (av[i][j])
+		{
+			write(1, &av[i][j], 1);
+			j++;
+		}
+		write(1, "\n", 1);
+		i++;
 	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-		ft_putchar(nb + 48);
+	return (0);
 }
-
-/*
-int main(void)
-{
-	ft_putnbr(-42348);
-}
-*/
